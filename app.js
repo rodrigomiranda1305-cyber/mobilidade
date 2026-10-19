@@ -66,3 +66,47 @@
     todos('.sec .wrap > *').forEach(function (el) { el.classList.add('surge'); io.observe(el); });
   }
 })();
+
+// Vídeos: o principal toca mudo sozinho (como no original) e, ao toque, recomeça do início com som;
+// os depoimentos carregam só quando a pessoa toca no play (página leve)
+(function () {
+  var todos = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
+  var monta = function (box, comSom) {
+    var v = document.createElement('video');
+    v.playsInline = true; v.setAttribute('playsinline', ''); v.preload = 'metadata';
+    v.poster = box.querySelector('img').src;
+    var hls = box.getAttribute('data-hls'), mp4 = box.getAttribute('data-mp4');
+    if (hls && v.canPlayType('application/vnd.apple.mpegurl')) v.src = hls;
+    else if (hls && window.Hls && window.Hls.isSupported()) { var h = new window.Hls({ capLevelToPlayerSize: true }); h.loadSource(hls); h.attachMedia(v); }
+    else v.src = mp4;
+    v.muted = !comSom;
+    v.style.width = '100%'; v.style.aspectRatio = '16 / 9'; v.style.display = 'block'; v.style.background = '#000';
+    return v;
+  };
+  // principal
+  todos('.video--vsl').forEach(function (box) {
+    var iniciar = function () {
+      var v = monta(box, false);
+      v.autoplay = true; v.loop = false;
+      box.insertBefore(v, box.firstChild); box.querySelector('img').style.display = 'none';
+      v.play().catch(function () {});
+      box.addEventListener('click', function liga() {
+        box.removeEventListener('click', liga);
+        v.muted = false; v.currentTime = 0; v.controls = true; v.play();
+        var s = box.querySelector('.som'); if (s) s.remove();
+      });
+    };
+    if (window.Hls || !box.getAttribute('data-hls')) iniciar();
+    else window.addEventListener('load', iniciar);
+  });
+  // depoimentos
+  todos('.video[data-mp4]:not(.video--vsl)').forEach(function (box) {
+    box.addEventListener('click', function abre() {
+      box.removeEventListener('click', abre);
+      todos('.video video').forEach(function (o) { o.pause(); });
+      var v = monta(box, true); v.controls = true;
+      box.innerHTML = ''; box.appendChild(v); box.style.cursor = 'default';
+      v.play().catch(function () {});
+    });
+  });
+})();
