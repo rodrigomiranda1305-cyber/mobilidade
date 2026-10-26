@@ -12,7 +12,23 @@
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,600;0,700;1,500;1,600&family=Karla:wght@400;600;700&family=Roboto:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,600;0,700;1,500;1,600&family=Karla:wght@400;600;700&family=Roboto:wght@400;700&display=swap"></noscript>
 <link rel="stylesheet" href="style.css?v=2">
-<script src="config.js?v=3"></script>
+<script src="config.js?v=4"></script>
+<!-- Utmify: UTMs nos links do checkout + pixel (o ID fica no config.js) -->
+<script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+<script>
+(function () {
+  var C = window.MB_CONFIG || {};
+  if (!C.utmifyPixelId) return;
+  window.pixelId = C.utmifyPixelId;
+  function carregar() {
+    var s = document.createElement('script');
+    s.async = true; s.defer = true;
+    s.src = 'https://cdn.utmify.com.br/scripts/pixel/pixel.js';
+    document.head.appendChild(s);
+  }
+  if (document.readyState === 'complete') carregar(); else window.addEventListener('load', carregar);
+})();
+</script>
 <!-- Microsoft Clarity (gravações e mapas de calor) -->
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script","z3jb23fda2");</script>
 </head>

@@ -2,10 +2,13 @@
 window.MB_CONFIG = {
   produto: 'Reset de Mobilidade em 8 Minutos',
 
-  // A DEFINIR com o usuário: preço final em reais e checkout
+  // Preço e checkout (Kiwify, produto 95380be0)
   preco: '67',
   precoCentavos: ',00',
-  checkout: '#oferta',
+  checkout: 'https://pay.kiwify.com.br/05j55l6',
+
+  // Pixel da Utmify (criado na Utmify ligado ao pixel do Facebook da conta CN). Vazio = não carrega.
+  utmifyPixelId: '',
 
   // Valores "avaliado em" (mesmos números da página original), somados automaticamente no total
   itens: [
