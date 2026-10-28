@@ -8,7 +8,7 @@ window.MB_CONFIG = {
   checkout: 'https://pay.kiwify.com.br/05j55l6',
 
   // Pixel da Utmify (criado na Utmify ligado ao pixel do Facebook da conta CN). Vazio = não carrega.
-  utmifyPixelId: '',
+  utmifyPixelId: '6ae1bba03a0670cb2f428cc1',
 
   // Valores "avaliado em" (mesmos números da página original), somados automaticamente no total
   itens: [
