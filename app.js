@@ -4,6 +4,15 @@
   var brl = function (v) { return 'R$ ' + v.toLocaleString('pt-BR'); };
   var todos = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
 
+  // preço por extenso ("19,90"; "27" quando não tem centavos) e % de desconto sobre o valor total, arredondado para baixo
+  var soma = function (l) { return l.reduce(function (s, x) { return s + x.valor; }, 0); };
+  var total = soma(C.itens) + soma(C.bonus);
+  var preco = parseFloat(String(C.preco) + String(C.precoCentavos || '').replace(',', '.')) || 0;
+  C.precoTexto = C.preco + (C.precoCentavos && C.precoCentavos !== ',00' ? C.precoCentavos : '');
+  C.desconto = Math.floor((total - preco) / total * 100);
+  // Clarity: marca a versão da página (filtro "variante"/"preco" nas gravações e mapas de calor)
+  if (window.clarity) { window.clarity('set', 'variante', C.variante || ''); window.clarity('set', 'preco', C.precoTexto); }
+
   todos('[data-cfg]').forEach(function (el) {
     var v = C[el.getAttribute('data-cfg')];
     if (v !== undefined && v !== '') el.textContent = v;
@@ -13,11 +22,9 @@
   todos('[data-valor]').forEach(function (el) { var i = C.itens[+el.getAttribute('data-valor')]; el.textContent = brl(i.valor) + ' de valor'; });
   todos('[data-bonus]').forEach(function (el) { var b = C.bonus[+el.getAttribute('data-bonus')]; el.textContent = b.valor ? brl(b.valor) + ' de valor' : 'Acesso grátis'; });
 
-  var soma = function (l) { return l.reduce(function (s, x) { return s + x.valor; }, 0); };
-  var total = soma(C.itens) + soma(C.bonus);
-  var preco = parseFloat(String(C.preco).replace(',', '.')) || 0;
   todos('[data-total]').forEach(function (el) { el.textContent = brl(total); });
-  todos('[data-economia]').forEach(function (el) { el.textContent = brl(Math.round(total - preco)); });
+  var economia = Math.round((total - preco) * 100) / 100;
+  todos('[data-economia]').forEach(function (el) { el.textContent = 'R$ ' + economia.toLocaleString('pt-BR', { minimumFractionDigits: economia % 1 ? 2 : 0 }); });
 
   // lista da caixa de preço
   var lp = document.querySelector('[data-lista-preco]');

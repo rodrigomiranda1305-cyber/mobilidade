@@ -2,10 +2,7 @@
 window.MB_CONFIG = {
   produto: 'Reset de Mobilidade em 8 Minutos',
 
-  // Preço e checkout (Kiwify, produto 95380be0)
-  preco: '67',
-  precoCentavos: ',00',
-  checkout: 'https://pay.kiwify.com.br/05j55l6',
+  // Preço e checkout: vêm da versão da página (MB_VARIANTES, no fim deste arquivo)
 
   // Pixel da Utmify (criado na Utmify ligado ao pixel do Facebook da conta CN). Vazio = não carrega.
   utmifyPixelId: '6ae1bba03a0670cb2f428cc1',
@@ -37,3 +34,20 @@ window.MB_CONFIG = {
   contador: true,
   nomeCampanha: 'PROMOÇÃO DE PRIMAVERA',
 };
+
+// Teste de preços (30/10/2026): 4 versões da mesma página, uma por oferta da Kiwify
+// (mesmo produto 95380be0, mesma área de membros, mesmo order bump de R$ 9,90).
+// /p1/ a /p4/ definem window.MB_VARIANTE antes de carregar este arquivo; a raiz usa a p4.
+// O % de desconto é calculado no app.js sobre o valor total (R$ 790), arredondado para baixo.
+window.MB_VARIANTES = {
+  p1: { preco: '19', precoCentavos: ',90', checkout: 'https://pay.kiwify.com.br/vfhhO9D' },
+  p2: { preco: '27', precoCentavos: ',00', checkout: 'https://pay.kiwify.com.br/DuGb7pf' },
+  p3: { preco: '37', precoCentavos: ',00', checkout: 'https://pay.kiwify.com.br/opAS3FC' },
+  p4: { preco: '49', precoCentavos: ',90', checkout: 'https://pay.kiwify.com.br/NMnyp10' },
+};
+(function () {
+  var nome = window.MB_VARIANTES[window.MB_VARIANTE] ? window.MB_VARIANTE : 'p4';
+  var v = window.MB_VARIANTES[nome];
+  for (var k in v) window.MB_CONFIG[k] = v[k];
+  window.MB_CONFIG.variante = nome;
+})();
