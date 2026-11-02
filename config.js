@@ -9,7 +9,7 @@ window.MB_CONFIG = {
 
   // Valores "avaliado em" (mesmos números da página original), somados automaticamente no total
   itens: [
-    { nome: 'Aulas diárias guiadas', valor: 149 },
+    { nome: 'Aula guiada diária de 8 minutos', valor: 149 },
     { nome: 'Acompanhamento personalizado de 30 dias', valor: 189 },
     { nome: 'Avaliações de mobilidade', valor: 149 },
     { nome: 'Reset do sistema nervoso', valor: 79 },

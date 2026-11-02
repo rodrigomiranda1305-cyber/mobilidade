@@ -173,3 +173,15 @@ document.addEventListener('click', function (e) {
   var a = e.target.closest && e.target.closest('[data-onde]');
   if (a && window.clarity) window.clarity('event', 'clique_' + a.getAttribute('data-onde'));
 }, true);
+
+// Avaliações: mostram 6 linhas e um "ler tudo" (02/11)
+(function () {
+  Array.prototype.forEach.call(document.querySelectorAll('.review p'), function (p) {
+    p.classList.add('corta');
+    if (p.scrollHeight <= p.clientHeight + 4) { p.classList.remove('corta'); return; }
+    var b = document.createElement('button');
+    b.type = 'button'; b.className = 'ler'; b.textContent = 'ler tudo';
+    b.addEventListener('click', function () { b.textContent = p.classList.toggle('corta') ? 'ler tudo' : 'mostrar menos'; });
+    p.parentNode.insertBefore(b, p.nextSibling);
+  });
+})();

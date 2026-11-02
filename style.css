@@ -278,3 +278,25 @@ img.mini { width: 56px; height: 56px; object-fit: cover; border-radius: 10px; bo
 .barra-cta small { font-size: 12px; color: var(--suave); }
 .barra-cta a { flex: none; background: var(--verde); color: #fff; text-decoration: none; font-weight: 700; font-size: 17px; padding: 13px 20px; border-radius: 8px; box-shadow: 0 4px 0 var(--verde-esc); }
 @media (min-width: 900px) { .barra-cta { display: none; } }
+
+/* 02/11/2026: revisão dos 100 pontos (âncora "de R$ 67", play no canto com duração, FAQ sem "P.", só o 1º botão pulsa, avaliações com "ler tudo") */
+img { height: auto; }
+.hero .pre { font-style: normal; color: #5d6470; font-weight: 600; }
+.topo s, .barra-cta small s { opacity: .75; }
+.preco-hero span s { color: var(--suave); }
+.pagar .de { font-size: 16px; color: #c9d1da; margin-top: 8px; }
+.pagar .de s { color: #9aa6b2; }
+.cta { animation: none; }
+.hero .cta { animation: pulso 2.4s infinite; }
+.cta--teste { background: transparent; border: 2px solid #f2b27c; box-shadow: none; color: #fff; }
+.faq summary { padding-left: 18px; }
+.faq summary::before { content: none; }
+.faq details p { padding-left: 18px; }
+.arraste { text-align: center; font-size: 13px; color: var(--suave); margin-top: 8px; }
+.video .play { left: 14px; top: auto; bottom: 14px; margin: 0; width: 52px; height: 52px; background: rgba(39, 174, 96, .95); box-shadow: 0 0 0 6px rgba(255, 255, 255, .25); }
+.video .play::after { left: 21px; top: 15px; border-left-width: 15px; border-top-width: 11px; border-bottom-width: 11px; }
+.video .dur { position: absolute; left: 76px; bottom: 30px; background: rgba(0, 0, 0, .72); color: #fff; font: 700 12px/1.4 'Karla', sans-serif; padding: 2px 8px; border-radius: 6px; }
+.review p.corta { display: -webkit-box; -webkit-line-clamp: 6; -webkit-box-orient: vertical; overflow: hidden; }
+.review .ler { display: inline-block; margin-top: 6px; background: none; border: 0; padding: 0; color: var(--verde-esc); font: 700 14px 'Karla', sans-serif; cursor: pointer; }
+.assinatura img { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; flex: none; }
+.rodape a { color: #9cc3ff; }
