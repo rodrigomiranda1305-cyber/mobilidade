@@ -151,6 +151,7 @@ em { font-style: italic; }
 .preco-box ul { list-style: none; padding: 8px 20px 4px; }
 .preco-box li { display: flex; justify-content: space-between; padding: 6px 0; font-size: 15px; }
 .preco-box li span::before { content: '✓  '; color: var(--tinta); font-weight: 700; }
+.preco-box li b, .preco-box .sub .dia { white-space: nowrap; padding-left: 8px; }
 .preco-box .sub { border-top: 1px solid var(--linha); margin: 6px 20px 0; padding: 12px 0; font-size: 15px; }
 .preco-box .sub div { display: flex; justify-content: space-between; padding: 3px 0; }
 .preco-box .sub s { color: var(--suave); }

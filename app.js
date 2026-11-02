@@ -25,6 +25,8 @@
   todos('[data-total]').forEach(function (el) { el.textContent = brl(total); });
   var economia = Math.round((total - preco) * 100) / 100;
   todos('[data-economia]').forEach(function (el) { el.textContent = 'R$ ' + economia.toLocaleString('pt-BR', { minimumFractionDigits: economia % 1 ? 2 : 0 }); });
+  // preço por dia nos 21 dias do programa (01/11: âncora honesta no lugar do total riscado de R$ 790)
+  todos('[data-por-dia]').forEach(function (el) { el.textContent = 'R$ ' + (preco / 21).toFixed(2).replace('.', ','); });
 
   // lista da caixa de preço
   var lp = document.querySelector('[data-lista-preco]');
