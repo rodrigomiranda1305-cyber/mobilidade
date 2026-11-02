@@ -80,13 +80,31 @@
 // os depoimentos carregam só quando a pessoa toca no play (página leve)
 (function () {
   var todos = function (sel) { return Array.prototype.slice.call(document.querySelectorAll(sel)); };
+  // hls.js (123 KB) só serve para a aula completa no fim da página: baixa quando ela se aproxima da tela ou no toque (02/11)
+  var carregaHls = function (cb) {
+    if (window.Hls) return cb && cb();
+    var s = document.getElementById('hlsjs');
+    if (!s) { s = document.createElement('script'); s.id = 'hlsjs'; s.src = 'https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js'; document.head.appendChild(s); }
+    if (cb) { s.addEventListener('load', cb); s.addEventListener('error', cb); }
+  };
+  var comHls = todos('[data-hls]');
+  if (comHls.length && 'IntersectionObserver' in window) {
+    var perto = new IntersectionObserver(function (es) {
+      if (es.some(function (e) { return e.isIntersecting; })) { perto.disconnect(); carregaHls(); }
+    }, { rootMargin: '900px 0px' });
+    comHls.forEach(function (b) { perto.observe(b); });
+  }
   var monta = function (box, comSom) {
     var v = document.createElement('video');
     v.playsInline = true; v.setAttribute('playsinline', ''); v.preload = 'metadata';
     v.poster = box.querySelector('img').src;
     var hls = box.getAttribute('data-hls'), mp4 = box.getAttribute('data-mp4');
     if (hls && v.canPlayType('application/vnd.apple.mpegurl')) v.src = hls;
-    else if (hls && window.Hls && window.Hls.isSupported()) { var h = new window.Hls({ capLevelToPlayerSize: true }); h.loadSource(hls); h.attachMedia(v); }
+    else if (hls) carregaHls(function () {
+      if (window.Hls && window.Hls.isSupported()) { var h = new window.Hls({ capLevelToPlayerSize: true }); h.loadSource(hls); h.attachMedia(v); }
+      else v.src = mp4;
+      if (v.autoplay || v.controls) v.play().catch(function () {});
+    });
     else v.src = mp4;
     v.muted = !comSom;
     v.style.width = '100%'; v.style.aspectRatio = '16 / 9'; v.style.display = 'block'; v.style.background = '#000';
