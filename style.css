@@ -263,3 +263,17 @@ img.mini { width: 56px; height: 56px; object-fit: cover; border-radius: 10px; bo
 .galeria-vivo img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; border-radius: var(--raio); box-shadow: var(--sombra); }
 .galeria-vivo .g1 { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
 @media (min-width: 720px) { .cards--2 { grid-template-columns: 1fr 1fr; } }
+
+/* 01/11/2026: vídeo curto vertical no topo, frase do método, link "ver mais", botão do teste e barra fixa de compra */
+.video--curto img { aspect-ratio: 4 / 5; }
+.video-card .video--curto { max-width: 520px; margin: 0 auto; }
+.video .som--canto { top: auto; bottom: 14px; left: auto; right: 14px; transform: none; padding: 8px 14px; font-size: 14px; border-radius: 30px; background: rgba(20, 20, 20, .72); }
+.metodo { padding: 0 14px 14px; margin: 0; font-size: 13px; line-height: 1.4; color: var(--suave); text-align: center; }
+.ver-mais { display: inline-block; margin-top: 16px; color: var(--suave); font-size: 15px; text-decoration: underline; }
+.cta--teste { background: var(--laranja); box-shadow: 0 6px 0 #b85f1a, 0 12px 24px rgba(224, 122, 40, .3); }
+.barra-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 60; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 10px 14px calc(10px + env(safe-area-inset-bottom)); background: #fff; box-shadow: 0 -6px 24px rgba(0, 0, 0, .14); transform: translateY(110%); transition: transform .25s; }
+.barra-cta.on { transform: none; }
+.barra-cta b { display: block; font-family: 'Bitter', serif; font-size: 22px; color: var(--verde-esc); line-height: 1.1; }
+.barra-cta small { font-size: 12px; color: var(--suave); }
+.barra-cta a { flex: none; background: var(--verde); color: #fff; text-decoration: none; font-weight: 700; font-size: 17px; padding: 13px 20px; border-radius: 8px; box-shadow: 0 4px 0 var(--verde-esc); }
+@media (min-width: 900px) { .barra-cta { display: none; } }

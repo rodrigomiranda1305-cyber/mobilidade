@@ -31,13 +31,13 @@ window.MB_CONFIG = {
   garantiaDias: 30,
 
   // Contador até a meia-noite. Desligue (false) se não quiser.
-  contador: true,
-  nomeCampanha: 'PROMOÇÃO DE PRIMAVERA',
+  contador: false,   // 01/11: desligado (contador que zera toda meia-noite tira credibilidade)
+  nomeCampanha: 'LANÇAMENTO NO BRASIL',
 };
 
 // Teste de preços (30/10/2026): 4 versões da mesma página, uma por oferta da Kiwify
 // (mesmo produto 95380be0, mesma área de membros, mesmo order bump de R$ 9,90).
-// /p1/ a /p4/ definem window.MB_VARIANTE antes de carregar este arquivo; a raiz usa a p4.
+// /p1/ a /p4/ definem window.MB_VARIANTE antes de carregar este arquivo; desde 01/11 a raiz usa a p1 (R$ 19,90).
 // O % de desconto é calculado no app.js sobre o valor total (R$ 790), arredondado para baixo.
 window.MB_VARIANTES = {
   p1: { preco: '19', precoCentavos: ',90', checkout: 'https://pay.kiwify.com.br/vfhhO9D' },
@@ -46,7 +46,7 @@ window.MB_VARIANTES = {
   p4: { preco: '49', precoCentavos: ',90', checkout: 'https://pay.kiwify.com.br/NMnyp10' },
 };
 (function () {
-  var nome = window.MB_VARIANTES[window.MB_VARIANTE] ? window.MB_VARIANTE : 'p4';
+  var nome = window.MB_VARIANTES[window.MB_VARIANTE] ? window.MB_VARIANTE : 'p1';
   var v = window.MB_VARIANTES[nome];
   for (var k in v) window.MB_CONFIG[k] = v[k];
   window.MB_CONFIG.variante = nome;

@@ -11,9 +11,9 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,600;0,700;1,500;1,600&family=Karla:wght@400;600;700&family=Roboto:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,600;0,700;1,500;1,600&family=Karla:wght@400;600;700&family=Roboto:wght@400;700&display=swap"></noscript>
-<link rel="stylesheet" href="../style.css?v=3">
+<link rel="stylesheet" href="../style.css?v=4">
 <script>window.MB_VARIANTE = 'p4';</script>
-<script src="../config.js?v=5"></script>
+<script src="../config.js?v=6"></script>
 <!-- Utmify: UTMs nos links do checkout + pixel (o ID fica no config.js) -->
 <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
 <script>
@@ -37,8 +37,7 @@
 
 <!-- 0. BARRA DO TOPO -->
 <div class="topo">
-  <span>🍃 <span data-cfg="nomeCampanha">PROMOÇÃO</span> · <span data-cfg="desconto">93</span>% OFF</span>
-  <span class="rel" data-contador-bar><b data-h>00</b>:<b data-m>00</b>:<b data-s>00</b></span>
+  <span>🍃 <span data-cfg="nomeCampanha">LANÇAMENTO NO BRASIL</span> · acesso imediato</span>
 </div>
 
 <!-- 1. HERO -->
@@ -48,15 +47,17 @@
     <h1>Pare de alongar forçando.<br>Seu corpo está se protegendo.</h1>
     <p class="sub">Quanto mais você força, mais o seu sistema nervoso trava o corpo para te proteger. A saída são <strong>8 minutos por dia</strong> dos movimentos certos, sem forçar.</p>
     <div class="video-card">
-      <div class="video video--vsl" data-hls="../video/vsl/vsl.m3u8" data-mp4="../video/vsl/vsl.m3u8"><img src="../img/thumb-hero-pt.webp" alt="Vídeo: por que o seu corpo está travando"><span class="som">🔇 O vídeo está passando<br><b>Toque para ativar o som</b></span></div>
+      <div class="video video--curto" data-mp4="../video/curto.mp4"><img src="../img/curto-capa.webp" alt="Mini-aula: por que você trava mesmo alongando" width="640" height="800"><span class="som som--canto">🔊 Toque para ouvir</span></div>
       <div class="stats">
         <div><b data-cfg="anosExperiencia">15+</b><small>anos de<br>experiência</small></div>
         <div><b>Cert.</b><small>terapeuta<br>esportivo</small></div>
         <div><b data-cfg="alunos">50 mil+</b><small>alunos<br>felizes</small></div>
       </div>
+      <p class="metodo">Método americano usado por mais de 50 mil alunos, agora em português</p>
     </div>
-    <div class="preco-hero"><span>De <s data-total>R$ 790</s> por</span> <b>R$ <span data-cfg="precoTexto">49,90</span></b><small>Pagamento único · Acesso vitalício</small></div>
-    <a class="cta" href="https://pay.kiwify.com.br/NMnyp10" data-checkout>Comece agora! (economize <span data-cfg="desconto">93</span>%)<small>🛡️ Garantia de devolução de <span data-cfg="garantiaDias">30</span> dias</small></a>
+    <div class="preco-hero"><span>Lançamento no Brasil:</span> <b>R$ <span data-cfg="precoTexto">49,90</span></b><small>Pagamento único · Acesso imediato · Sem mensalidade</small></div>
+    <a class="cta" href="https://pay.kiwify.com.br/NMnyp10" data-checkout data-onde="topo">Comece agora por R$ <span data-cfg="precoTexto">49,90</span><small>🛡️ Garantia de <span data-cfg="garantiaDias">30</span> dias · Pix ou cartão</small></a>
+    <a class="ver-mais" href="#incluso">↓ Ver tudo o que está incluído</a>
   </div>
 </header>
 
@@ -74,15 +75,6 @@
       <article class="review"><span class="estrelas">★★★★★</span><h4>"Voltando a confiar no meu corpo aos 66"</h4><p>Que surpresa agradável. Tenho 66 anos e estou no programa há um mês. Eu tinha uma dor intensa no quadril e rigidez no pescoço, e os dois melhoraram muito. E hoje aquela dor aguda e pontiaguda nas costelas e no fígado quando eu deitava de bruços parece ter sumido! Que avanço. Uma última coisa: a sua presença constante e os retornos personalizados na comunidade têm um valor enorme. É um serviço raro, e muito apreciado!</p><div class="autor"><img src="../img/av-orion.webp" alt="" loading="lazy" decoding="async"><div><b>Orion</b>1 avaliação · 1 de set. de 2025</div></div></article>
     </div>
     <div class="pontos" data-pontos></div>
-  </div>
-</section>
-
-<!-- 3. ESTUDO DE CASO -->
-<section class="sec sec--escuro">
-  <div class="wrap">
-    <p class="sobre">Estudo de caso de aluna</p>
-    <h2 class="centro">Como a Maija venceu a rigidez da pré-menopausa</h2>
-    <div class="video mt" data-mp4="../video/maija.mp4"><img src="../img/thumb-maija-pt.webp" alt="Depoimento da Maija" loading="lazy" decoding="async"><i class="play"></i></div>
   </div>
 </section>
 
@@ -107,53 +99,6 @@
       </ul>
       <div class="callout">O seu sistema nervoso não responde à FORÇA, ele responde à CONFIANÇA.</div>
     </div>
-  </div>
-</section>
-
-<!-- 5. O QUE TORNA DIFERENTE -->
-<section class="sec sec--creme">
-  <div class="wrap">
-    <h2 class="centro">O que torna isso diferente?</h2>
-    <p class="mt centro">O <strong>Reset de Mobilidade em 8 Minutos</strong> liga o ponto onde o seu corpo está hoje ao ponto onde você quer chegar, unindo os exercícios certos, um método claro e apoio de verdade. Nada de alongamentos aleatórios ou de insistir na dor. Assim você se mexe de forma natural e sem dor, para a vida toda.</p>
-    <p class="mt centro"><strong>Ele te dá as três peças que a maioria dos programas esquece:</strong></p>
-    <div class="cards">
-      <div class="card"><h3><span class="ic">✓</span>Os movimentos</h3><p>Devolvemos ao seu corpo a fonte de força que ele esqueceu. A vida moderna te treinou para se mexer só em linha reta. Trazemos de volta o movimento fluido e natural, que deixa tudo mais fácil. São sequências de movimento comprovadas, que reconstroem a confiança e devolvem o movimento ao corpo inteiro.</p></div>
-      <div class="card"><h3><span class="ic">✓</span>O método</h3><p>8 minutos por dia, entre 70% e 90% da sua capacidade atual. Nada aleatório. Nada exagerado. Uma estrutura clara, que dá ao seu sistema nervoso exatamente o que ele precisa para se adaptar sem acionar a proteção nem a resistência.</p></div>
-      <div class="card"><h3><span class="ic">✓</span>O apoio</h3><p>Aulas ao vivo toda semana e orientação contínua minha, da minha esposa e dos nossos profissionais do movimento. Dúvidas são respondidas. Ajustes são feitos. Você tem apoio em cada etapa para seguir evoluindo com confiança.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- 6. REPROGRAMAÇÃO -->
-<section class="sec">
-  <div class="wrap centro">
-    <h2>Não é só exercício, é reprogramação.</h2>
-    <p class="mt">O mesmo sistema que me ajudou a me reconstruir depois de uma cirurgia no cérebro. O mesmo que já ajudou mais de 50 mil pessoas a se mexerem como há 20 anos.</p>
-    <p class="mt"><em><strong>Não forçando a mudança, mas reconstruindo a confiança.</strong></em></p>
-  </div>
-</section>
-
-<!-- 7. DA DOR À LIBERDADE -->
-<section class="sec sec--escuro">
-  <div class="wrap">
-    <p class="sobre">Da dor à liberdade</p>
-    <h2 class="centro">Como pessoas reais recuperaram a sua mobilidade</h2>
-    <div class="video mt" data-mp4="../video/montagem.mp4"><img src="../img/thumb-mashup-pt.webp" alt="Depoimentos de alunos" loading="lazy" decoding="async"><i class="play"></i></div>
-  </div>
-</section>
-
-<!-- 8. ENTRE PARA O RESET -->
-<section class="sec">
-  <div class="wrap centro">
-    <h2>Entre para o Reset de Mobilidade em 8 Minutos</h2>
-    <img class="mockup mt2" src="../img/mockup-pt.webp" alt="Reset de Mobilidade em 8 Minutos e bônus" loading="lazy" decoding="async">
-    <p class="mt2"><em><strong>Simplicidade + apoio = sucesso</strong></em></p>
-    <div class="passos">
-      <div class="passo"><div class="ic">▶</div><div><h4>Dê o play e acompanhe</h4><p>Só 8 minutos por dia de aulas curtas e guiadas, que pensam por você. Tudo o que você precisa fazer é se mexer.</p></div></div>
-      <div class="passo"><div class="ic">💬</div><div><h4>Peça ajuda quando precisar</h4><p>Dentro da comunidade exclusiva você recebe respostas rápidas, correção de execução e orientação do Eddie e da equipe sempre que algo parecer estranho.</p></div></div>
-      <div class="passo"><div class="ic">↻</div><div><h4>Repita todo dia e ganhe embalo</h4><p>A constância cria a mudança. A cada dia o seu corpo se sente mais seguro, mais forte e mais capaz de se mexer livremente de novo.</p></div></div>
-    </div>
-    <h3 class="mt2">Tudo o que você precisa é de um tapete<br>e 8 minutos.</h3>
   </div>
 </section>
 
@@ -206,18 +151,9 @@
         <div class="corpo">Uma sequência rápida de um minuto, com movimentos que dão energia e te deixam focado, acordado e pronto para o que vier.<b>O QUE TEM DENTRO</b><ul class="lista lista--bola"><li>Ativa a circulação</li><li>Solta a rigidez</li><li>Te centra para o dia que começa</li></ul></div></details>
       <div class="total">
         <div class="lin"><span>Valor total do programa</span><span><s data-total>R$ 0</s><span class="val">R$ <span data-cfg="precoTexto">49,90</span></span></span></div>
-        <div class="eco">★ Você economiza <span data-economia>R$ 0</span> hoje (mais de <span data-cfg="desconto">93</span>% de desconto)</div>
+        <div class="eco">★ Hoje, no lançamento no Brasil, você leva tudo por R$ <span data-cfg="precoTexto">49,90</span></div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- 10. DEPOIMENTO EM VÍDEO -->
-<section class="sec">
-  <div class="wrap">
-    <p class="sobre">Depoimento de cliente</p>
-    <h2 class="centro">"Vale facilmente 10 vezes o que você está cobrando!"</h2>
-    <div class="video mt" data-mp4="../video/eric.mp4"><img src="../img/thumb-depo-pt.webp" alt="Depoimento do Eric" loading="lazy" decoding="async"><i class="play"></i></div>
   </div>
 </section>
 
@@ -230,18 +166,14 @@
       <ul data-lista-preco></ul>
       <div class="sub">
         <div><span>Subtotal</span><s data-total>R$ 0</s></div>
-        <div><span><span class="tag">OFERTA</span><span data-cfg="nomeCampanha">PROMOÇÃO</span> · <span data-cfg="desconto">93</span>% OFF</span><span class="desconto">−<span data-economia>R$ 0</span></span></div>
+        <div><span><span class="tag">OFERTA</span>Lançamento no Brasil</span><span class="desconto">−<span data-economia>R$ 0</span></span></div>
       </div>
       <div class="pagar">
         <small>VOCÊ PAGA HOJE</small>
         <div class="grande"><sup>R$</sup><span data-cfg="preco">49</span><sub data-cfg="precoCentavos">,90</sub></div>
-        <div class="relogio" data-contador-box>
-          <small>⏱ A PROMOÇÃO TERMINA EM</small>
-          <div class="caixas"><div><b data-h>00</b><span>HORAS</span></div><div><b data-m>00</b><span>MIN</span></div><div><b data-s>00</b><span>SEG</span></div></div>
-        </div>
       </div>
     </div>
-    <a class="cta" href="https://pay.kiwify.com.br/NMnyp10" data-checkout>Comece agora! (economize <span data-cfg="desconto">93</span>%)<small>🛡️ Garantia de devolução de <span data-cfg="garantiaDias">30</span> dias</small></a>
+    <a class="cta" href="https://pay.kiwify.com.br/NMnyp10" data-checkout data-onde="oferta">Comece agora por R$ <span data-cfg="precoTexto">49,90</span><small>🛡️ Garantia de <span data-cfg="garantiaDias">30</span> dias · Pix ou cartão</small></a>
     <p class="letra-miuda">Pagamento único · Acesso vitalício · Com garantia total de devolução em <span data-cfg="garantiaDias">30</span> dias</p>
   </div>
 </section>
@@ -256,6 +188,98 @@
       <p class="mt">Confiamos tanto no que construímos que oferecemos uma garantia total de devolução em <span data-cfg="garantiaDias">30</span> dias. Experimente o programa inteiro sem risco. Se não for para você, é só mandar um e-mail dentro de <span data-cfg="garantiaDias">30</span> dias e devolvemos cada centavo. Sem perguntas, sem burocracia.</p>
       <div class="ass">Eddie Ron<small>FUNDADOR · TRUST BASED MOBILITY</small></div>
     </div>
+  </div>
+</section>
+
+<!-- 24. FAQ -->
+<section class="sec">
+  <div class="wrap faq">
+    <h2 class="centro">Perguntas frequentes</h2>
+    <details><summary>Para qual nível é este programa?</summary><p>Este programa foi feito para qualquer pessoa, independente da idade ou da condição física!</p></details>
+    <details><summary>Quando começa?</summary><p>Na hora. Assim que o pagamento é aprovado você recebe o acesso no seu e-mail e já pode fazer a primeira aula de 8 minutos.</p></details>
+    <details><summary>Não dá para aprender tudo isso no YouTube?</summary><p>No YouTube você encontra exercícios soltos. Aqui você tem uma sequência pensada na ordem certa, um método que respeita o seu sistema nervoso e acompanhamento para corrigir a execução. É isso que faz o resultado ficar.</p></details>
+    <details><summary>Preciso ter acesso a uma academia antes de começar?</summary><p>Não. Tudo o que você precisa é de um tapete e 8 minutos por dia, em casa.</p></details>
+    <details><summary>Devo investir no programa agora ou esperar ter mais experiência?</summary><p>Comece agora. O programa foi feito justamente para quem está travado ou parado há tempo. Quanto antes o corpo voltar a se mexer, mais fácil fica.</p></details>
+    <details><summary>É assinatura? Tem mensalidade?</summary><p>Não. É pagamento único, no Pix ou no cartão, e o acesso chega no seu e-mail na hora.</p></details>
+    <details><summary>Tenho mais de 60 anos e algumas dores. Posso fazer?</summary><p>Sim. Os movimentos são suaves, sem impacto e sem forçar, e você começa no seu nível. Na comunidade dá para pedir adaptação para o joelho ou as costas. Se tiver lesão recente, cirurgia ou dor forte, fale antes com o seu médico.</p></details>
+    <details><summary>Como funcionam as aulas ao vivo?</summary><p>Toda semana tem aula ao vivo para treinar junto e tirar dúvidas. Se não puder assistir na hora, a gravação fica disponível. As orientações de como participar estão logo na primeira aula da área de membros.</p></details>
+    <details><summary>Tem garantia?</summary><p>Sim. Você tem <span data-cfg="garantiaDias">30</span> dias para experimentar o programa inteiro. Se não for para você, é só mandar um e-mail e devolvemos 100% do valor.</p></details>
+    <a class="cta" href="https://pay.kiwify.com.br/NMnyp10" data-checkout data-onde="faq">Comece agora por R$ <span data-cfg="precoTexto">49,90</span><small>🛡️ Garantia de <span data-cfg="garantiaDias">30</span> dias · Pix ou cartão</small></a>
+  </div>
+</section>
+
+<!-- 9B. TESTE DE SENTAR E LEVANTAR -->
+<section class="sec sec--escuro" id="teste">
+  <div class="wrap centro">
+    <p class="sobre">Teste de 1 minuto</p>
+    <h2>Você consegue sentar no chão e levantar sem usar as mãos?</h2>
+    <p class="mt">Esse teste foi criado por um médico brasileiro e ficou conhecido no mundo todo depois de um estudo com mais de 2 mil pessoas. Em 1 minuto ele mostra como está a sua mobilidade hoje.</p>
+    <a class="cta cta--teste" href="/teste/" data-onde="teste-link">Fazer o teste agora (grátis)<small>Leva 1 minuto · resultado na hora</small></a>
+  </div>
+</section>
+
+<!-- 3. ESTUDO DE CASO -->
+<section class="sec sec--escuro">
+  <div class="wrap">
+    <p class="sobre">Estudo de caso de aluna</p>
+    <h2 class="centro">Como a Maija venceu a rigidez da pré-menopausa</h2>
+    <div class="video mt" data-mp4="../video/maija.mp4"><img src="../img/thumb-maija-pt.webp" alt="Depoimento da Maija" loading="lazy" decoding="async"><i class="play"></i></div>
+  </div>
+</section>
+
+<!-- 5. O QUE TORNA DIFERENTE -->
+<section class="sec sec--creme">
+  <div class="wrap">
+    <h2 class="centro">O que torna isso diferente?</h2>
+    <p class="mt centro">O <strong>Reset de Mobilidade em 8 Minutos</strong> liga o ponto onde o seu corpo está hoje ao ponto onde você quer chegar, unindo os exercícios certos, um método claro e apoio de verdade. Nada de alongamentos aleatórios ou de insistir na dor. Assim você se mexe de forma natural e sem dor, para a vida toda.</p>
+    <p class="mt centro"><strong>Ele te dá as três peças que a maioria dos programas esquece:</strong></p>
+    <div class="cards">
+      <div class="card"><h3><span class="ic">✓</span>Os movimentos</h3><p>Devolvemos ao seu corpo a fonte de força que ele esqueceu. A vida moderna te treinou para se mexer só em linha reta. Trazemos de volta o movimento fluido e natural, que deixa tudo mais fácil. São sequências de movimento comprovadas, que reconstroem a confiança e devolvem o movimento ao corpo inteiro.</p></div>
+      <div class="card"><h3><span class="ic">✓</span>O método</h3><p>8 minutos por dia, entre 70% e 90% da sua capacidade atual. Nada aleatório. Nada exagerado. Uma estrutura clara, que dá ao seu sistema nervoso exatamente o que ele precisa para se adaptar sem acionar a proteção nem a resistência.</p></div>
+      <div class="card"><h3><span class="ic">✓</span>O apoio</h3><p>Aulas ao vivo toda semana e orientação contínua minha, da minha esposa e dos nossos profissionais do movimento. Dúvidas são respondidas. Ajustes são feitos. Você tem apoio em cada etapa para seguir evoluindo com confiança.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 6. REPROGRAMAÇÃO -->
+<section class="sec">
+  <div class="wrap centro">
+    <h2>Não é só exercício, é reprogramação.</h2>
+    <p class="mt">O mesmo sistema que me ajudou a me reconstruir depois de uma cirurgia no cérebro. O mesmo que já ajudou mais de 50 mil pessoas a se mexerem como há 20 anos.</p>
+    <p class="mt"><em><strong>Não forçando a mudança, mas reconstruindo a confiança.</strong></em></p>
+  </div>
+</section>
+
+<!-- 7. DA DOR À LIBERDADE -->
+<section class="sec sec--escuro">
+  <div class="wrap">
+    <p class="sobre">Da dor à liberdade</p>
+    <h2 class="centro">Como pessoas reais recuperaram a sua mobilidade</h2>
+    <div class="video mt" data-mp4="../video/montagem.mp4"><img src="../img/thumb-mashup-pt.webp" alt="Depoimentos de alunos" loading="lazy" decoding="async"><i class="play"></i></div>
+  </div>
+</section>
+
+<!-- 8. ENTRE PARA O RESET -->
+<section class="sec">
+  <div class="wrap centro">
+    <h2>Entre para o Reset de Mobilidade em 8 Minutos</h2>
+    <img class="mockup mt2" src="../img/mockup-pt.webp" alt="Reset de Mobilidade em 8 Minutos e bônus" loading="lazy" decoding="async">
+    <p class="mt2"><em><strong>Simplicidade + apoio = sucesso</strong></em></p>
+    <div class="passos">
+      <div class="passo"><div class="ic">▶</div><div><h4>Dê o play e acompanhe</h4><p>Só 8 minutos por dia de aulas curtas e guiadas, que pensam por você. Tudo o que você precisa fazer é se mexer.</p></div></div>
+      <div class="passo"><div class="ic">💬</div><div><h4>Peça ajuda quando precisar</h4><p>Dentro da comunidade exclusiva você recebe respostas rápidas, correção de execução e orientação do Eddie e da equipe sempre que algo parecer estranho.</p></div></div>
+      <div class="passo"><div class="ic">↻</div><div><h4>Repita todo dia e ganhe embalo</h4><p>A constância cria a mudança. A cada dia o seu corpo se sente mais seguro, mais forte e mais capaz de se mexer livremente de novo.</p></div></div>
+    </div>
+    <h3 class="mt2">Tudo o que você precisa é de um tapete<br>e 8 minutos.</h3>
+  </div>
+</section>
+
+<!-- 10. DEPOIMENTO EM VÍDEO -->
+<section class="sec">
+  <div class="wrap">
+    <p class="sobre">Depoimento de cliente</p>
+    <h2 class="centro">"Vale facilmente 10 vezes o que você está cobrando!"</h2>
+    <div class="video mt" data-mp4="../video/eric.mp4"><img src="../img/thumb-depo-pt.webp" alt="Depoimento do Eric" loading="lazy" decoding="async"><i class="play"></i></div>
   </div>
 </section>
 
@@ -331,7 +355,7 @@
         <li><strong>Estabilidade no centro → liberdade nas pontas</strong><br>Treinamos primeiro os estabilizadores profundos, para o corpo se sentir seguro o bastante para soltar a tensão e se mexer livremente de novo.</li>
       </ul>
     </div>
-    <a class="cta" href="https://pay.kiwify.com.br/NMnyp10" data-checkout>Comece agora! (economize <span data-cfg="desconto">93</span>%)<small>🛡️ Garantia de devolução de <span data-cfg="garantiaDias">30</span> dias</small></a>
+    <a class="cta" href="https://pay.kiwify.com.br/NMnyp10" data-checkout data-onde="diferente">Comece agora por R$ <span data-cfg="precoTexto">49,90</span><small>🛡️ Garantia de <span data-cfg="garantiaDias">30</span> dias · Pix ou cartão</small></a>
   </div>
 </section>
 
@@ -450,7 +474,7 @@
       <p class="mt">Isso não é só "exercício de mobilidade". É retreinar o seu corpo para se mexer do jeito que ele foi feito para se mexer: com força, facilidade e resiliência.</p>
       <img class="foto" src="../img/passo4.webp" alt="Passo 4" loading="lazy" decoding="async">
     </div>
-    <a class="cta" href="https://pay.kiwify.com.br/NMnyp10" data-checkout>Comece agora! (economize <span data-cfg="desconto">93</span>%)<small>🛡️ Garantia de devolução de <span data-cfg="garantiaDias">30</span> dias</small></a>
+    <a class="cta" href="https://pay.kiwify.com.br/NMnyp10" data-checkout data-onde="passos">Comece agora por R$ <span data-cfg="precoTexto">49,90</span><small>🛡️ Garantia de <span data-cfg="garantiaDias">30</span> dias · Pix ou cartão</small></a>
   </div>
 </section>
 
@@ -487,19 +511,21 @@
   </div>
 </section>
 
-<!-- 24. FAQ -->
-<section class="sec">
-  <div class="wrap faq">
-    <h2 class="centro">Perguntas frequentes</h2>
-    <details><summary>Para qual nível é este programa?</summary><p>Este programa foi feito para qualquer pessoa, independente da idade ou da condição física!</p></details>
-    <details><summary>Quando começa?</summary><p>Na hora. Assim que o pagamento é aprovado você recebe o acesso no seu e-mail e já pode fazer a primeira aula de 8 minutos.</p></details>
-    <details><summary>Não dá para aprender tudo isso no YouTube?</summary><p>No YouTube você encontra exercícios soltos. Aqui você tem uma sequência pensada na ordem certa, um método que respeita o seu sistema nervoso e acompanhamento para corrigir a execução. É isso que faz o resultado ficar.</p></details>
-    <details><summary>Preciso ter acesso a uma academia antes de começar?</summary><p>Não. Tudo o que você precisa é de um tapete e 8 minutos por dia, em casa.</p></details>
-    <details><summary>Devo investir no programa agora ou esperar ter mais experiência?</summary><p>Comece agora. O programa foi feito justamente para quem está travado ou parado há tempo. Quanto antes o corpo voltar a se mexer, mais fácil fica.</p></details>
-    <details><summary>Tem garantia?</summary><p>Sim. Você tem <span data-cfg="garantiaDias">30</span> dias para experimentar o programa inteiro. Se não for para você, é só mandar um e-mail e devolvemos 100% do valor.</p></details>
-    <a class="cta" href="https://pay.kiwify.com.br/NMnyp10" data-checkout>Comece agora! (economize <span data-cfg="desconto">93</span>%)<small>🛡️ Garantia de devolução de <span data-cfg="garantiaDias">30</span> dias</small></a>
+<!-- 23B. AULA COMPLETA -->
+<section class="sec sec--creme" id="aula">
+  <div class="wrap">
+    <p class="sobre">Para quem quer entender tudo</p>
+    <h2 class="centro">Assista à aula completa do Eddie (17 min)</h2>
+    <div class="video mt" data-hls="../video/vsl/vsl.m3u8" data-mp4="../video/vsl/vsl.m3u8"><img src="../img/thumb-hero-pt.webp" alt="Aula completa do Eddie" loading="lazy" decoding="async"><i class="play"></i></div>
+    <a class="cta" href="https://pay.kiwify.com.br/NMnyp10" data-checkout data-onde="aula">Comece agora por R$ <span data-cfg="precoTexto">49,90</span><small>🛡️ Garantia de <span data-cfg="garantiaDias">30</span> dias · Pix ou cartão</small></a>
   </div>
 </section>
+
+<!-- BARRA FIXA DE COMPRA (celular): aparece depois do topo e some na oferta -->
+<div class="barra-cta" data-barra-cta>
+  <div><b>R$ <span data-cfg="precoTexto">49,90</span></b><small>pagamento único · garantia de <span data-cfg="garantiaDias">30</span> dias</small></div>
+  <a href="https://pay.kiwify.com.br/NMnyp10" data-checkout data-onde="barra">Comece agora</a>
+</div>
 
 <!-- 25. RODAPÉ -->
 <footer class="rodape">
@@ -513,6 +539,6 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.20/dist/hls.min.js" defer></script>
-<script src="../app.js?v=5"></script>
+<script src="../app.js?v=6"></script>
 </body>
 </html>

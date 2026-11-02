@@ -90,6 +90,22 @@
     v.style.width = '100%'; v.style.aspectRatio = '16 / 9'; v.style.display = 'block'; v.style.background = '#000';
     return v;
   };
+  // vídeo curto do topo (vertical e legendado: dá para entender sem som): toca mudo em loop; ao toque, recomeça com som
+  todos('.video--curto').forEach(function (box) {
+    var v = document.createElement('video');
+    v.src = box.getAttribute('data-mp4'); v.muted = true; v.autoplay = true; v.loop = true; v.playsInline = true; v.preload = 'auto';
+    v.setAttribute('playsinline', ''); v.setAttribute('muted', '');
+    v.poster = box.querySelector('img').src;
+    v.style.width = '100%'; v.style.aspectRatio = '4 / 5'; v.style.display = 'block'; v.style.background = '#000'; v.style.objectFit = 'cover';
+    box.insertBefore(v, box.firstChild); box.querySelector('img').style.display = 'none';
+    v.play().catch(function () {});
+    box.addEventListener('click', function liga() {
+      box.removeEventListener('click', liga);
+      v.muted = false; v.loop = false; v.currentTime = 0; v.controls = true; v.play();
+      var s = box.querySelector('.som'); if (s) s.remove();
+      if (window.clarity) window.clarity('event', 'som_video_topo');
+    });
+  });
   // principal
   todos('.video--vsl').forEach(function (box) {
     var iniciar = function () {
@@ -107,13 +123,33 @@
     else window.addEventListener('load', iniciar);
   });
   // depoimentos
-  todos('.video[data-mp4]:not(.video--vsl)').forEach(function (box) {
+  todos('.video[data-mp4]:not(.video--vsl):not(.video--curto)').forEach(function (box) {
     box.addEventListener('click', function abre() {
       box.removeEventListener('click', abre);
       todos('.video video').forEach(function (o) { o.pause(); });
+      if (window.clarity) window.clarity('event', box.closest('#aula') ? 'play_aula_completa' : 'play_depoimento');
       var v = monta(box, true); v.controls = true;
       box.innerHTML = ''; box.appendChild(v); box.style.cursor = 'default';
       v.play().catch(function () {});
     });
   });
 })();
+
+// Barra fixa de compra (celular): aparece quando o botão do topo sai da tela e some quando a oferta aparece
+(function () {
+  var barra = document.querySelector('[data-barra-cta]');
+  if (!barra || !('IntersectionObserver' in window)) return;
+  var topo = document.querySelector('.hero .cta'), oferta = document.querySelector('#oferta'), vis = { topo: true, oferta: false };
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) { vis[e.target === topo ? 'topo' : 'oferta'] = e.isIntersecting; });
+    barra.classList.toggle('on', !vis.topo && !vis.oferta);
+  });
+  if (topo) io.observe(topo);
+  if (oferta) io.observe(oferta);
+})();
+
+// Clarity: de qual botão saiu cada clique (topo, oferta, barra, aula, faq...) e o link do teste
+document.addEventListener('click', function (e) {
+  var a = e.target.closest && e.target.closest('[data-onde]');
+  if (a && window.clarity) window.clarity('event', 'clique_' + a.getAttribute('data-onde'));
+}, true);
